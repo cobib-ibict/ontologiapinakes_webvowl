@@ -1474,6 +1474,18 @@ Música da Biblioteca Nacional da França.</rdfs:comment>
     
 
 
+    <!-- http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#Responsavel -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#Responsavel">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#Contato"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <rdfs:comment xml:lang="pt-br">Nome do responsável pela Biblioteca.</rdfs:comment>
+        <rdfs:isDefinedBy xml:lang="pt-br">Esta propriedade descreve a entidade (pessoa ou organização) responsãvel pela  biblioteca.</rdfs:isDefinedBy>
+        <rdfs:label xml:lang="pt-br">Nome do responsável</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#alfabetacao -->
 
     <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#alfabetacao">
@@ -1489,10 +1501,35 @@ Música da Biblioteca Nacional da França.</rdfs:comment>
     <!-- http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#ano -->
 
     <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#ano">
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#PublicacaoSeriada"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#Obra"/>
         <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
         <rdfs:comment xml:lang="pt-br">Ano da publicação serida</rdfs:comment>
         <rdfs:label xml:lang="pt-br">ano de publicação</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#anoFinal -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#anoFinal">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#ano"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#Obra"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <rdfs:comment xml:lang="pt-br">Data final ou ano final da publicação seriada</rdfs:comment>
+        <rdfs:isDefinedBy xml:lang="pt-br">data em formato de ano que se refere ao ano final da imprenta de uma publicação em série.</rdfs:isDefinedBy>
+        <rdfs:label xml:lang="pt-br">Ano final de uma publicação seriada</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#anoInicial -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#anoInicial">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#ano"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#Obra"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <rdfs:comment xml:lang="pt-br">Data inicial ou ano incial da publicação seriada</rdfs:comment>
+        <rdfs:label xml:lang="pt-br">Data inicial</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -1505,31 +1542,6 @@ Música da Biblioteca Nacional da França.</rdfs:comment>
         <rdfs:comment xml:lang="pt-br">Palavras-chave extraídas de um vocabulário controlado, que representam o assunto da publicação.</rdfs:comment>
         <rdfs:isDefinedBy xml:lang="pt-br">Propriedade de dado que consiste em palavras-chave retiradas de um vocabulário controlado, usadas para descrever e categorizar o tema ou tópico principal de uma publicação.</rdfs:isDefinedBy>
         <rdfs:label xml:lang="pt-br">Assunto</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#bibliodata -->
-
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#bibliodata">
-        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#servicos"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#Biblioteca"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-        <rdfs:comment xml:lang="pt-br">Rede de catalogação cooperativa no Brasil, constituindo em uma base integrada de bibliotecas com o objetivo de promover a difusão dos acervos bibliográficos do País, de acesso público,</rdfs:comment>
-        <rdfs:label xml:lang="pt-br">Rede Bibliodata</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#ccn -->
-
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#ccn">
-        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#servicos"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#Biblioteca"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-        <rdfs:comment xml:lang="pt-br">O Catálogo Coletivo Nacional de Publicações Seriadas (CCN),</rdfs:comment>
-        <rdfs:isDefinedBy xml:lang="pt-br">Catálogo de acesso público que reúne informações sobre as coleções de publicações seriadas nacionais e estrangeiras disponíveis nas bibliotecas brasileiras</rdfs:isDefinedBy>
-        <rdfs:label xml:lang="pt-br">CCN</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -1584,18 +1596,6 @@ Cada algarismo do CEP possui um significado. Da esquerda para a direita, os núm
     
 
 
-    <!-- http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#codigoISSN -->
-
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#codigoISSN">
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#PublicacaoSeriada"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-        <rdfs:comment xml:lang="pt-br">Número Internacional Normalizado para Publicações Seriadas ou Número Internacional Normalizado das Publicações em Série, é um Número serial de oito dígitos, usado para identificação única de uma publicação em série, aceito internacionalmente. O ISSN é especialmente útil na distinção entre séries com o mesmo título e são utilizados na ordenação, catalogação, empréstimo entre bibliotecas e outras práticas em conexão com a literatura de série.</rdfs:comment>
-        <rdfs:isDefinedBy xml:lang="pt-br">Propriedade de dado que representa o International Standard Serial Number (ISSN), um código único atribuído a publicações seriadas como revistas e jornais, facilitando sua identificação e catalogação.</rdfs:isDefinedBy>
-        <rdfs:label xml:lang="pt-br">Código ISSN.</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
     <!-- http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#codigoIso -->
 
     <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#codigoIso">
@@ -1620,25 +1620,13 @@ Cada algarismo do CEP possui um significado. Da esquerda para a direita, os núm
     
 
 
-    <!-- http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#comut -->
-
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#comut">
-        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#servicos"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#Biblioteca"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-        <rdfs:comment xml:lang="pt-br">Serviço de solicitação de fotocópias e/ou empréstimo de documentos em bibliotecas nacionais e/ou estrangeiras.</rdfs:comment>
-        <rdfs:label xml:lang="pt-br">Programa de Comutação Bibliográfica (Comut)</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
     <!-- http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#conteudo -->
 
     <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#conteudo">
         <rdfs:domain rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#PublicacaoSeriada"/>
         <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-        <rdfs:comment xml:lang="pt-br">Contém descriçoes de publicações seriadas ou trasncrições das coleções.</rdfs:comment>
-        <rdfs:isDefinedBy xml:lang="pt-br">Propriedade de dado que representa o conteúdo de um registro, incluindo descrições de publicações seriadas</rdfs:isDefinedBy>
+        <rdfs:comment xml:lang="pt-br">Tipologia funcional</rdfs:comment>
+        <rdfs:isDefinedBy xml:lang="pt-br">Propriedade de dado que representa o conteúdo de uma obra rou seja sua tipologia funcional.</rdfs:isDefinedBy>
         <rdfs:label xml:lang="pt-br">Conteúdo</rdfs:label>
     </owl:DatatypeProperty>
     
@@ -1704,7 +1692,6 @@ Cada algarismo do CEP possui um significado. Da esquerda para a direita, os núm
     <!-- http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#dataFinalPI -->
 
     <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#dataFinalPI">
-        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#ano"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#PublicacaoImprenta"/>
         <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
         <rdfs:comment xml:lang="pt-br">atributo que se refere a data final da imprenta de uma publicação conforme o padrão Marc 21.</rdfs:comment>
@@ -1713,39 +1700,13 @@ Cada algarismo do CEP possui um significado. Da esquerda para a direita, os núm
     
 
 
-    <!-- http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#dataFinalPS -->
-
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#dataFinalPS">
-        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#ano"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#PublicacaoSeriada"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-        <rdfs:comment xml:lang="pt-br">Data final ou ano final da publicação seriada</rdfs:comment>
-        <rdfs:isDefinedBy xml:lang="pt-br">data em formato de ano que se refere ao ano final da imprenta de uma publicação em série.</rdfs:isDefinedBy>
-        <rdfs:label xml:lang="pt-br">Ano final de uma publicação seriada</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
     <!-- http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#dataInicialPI -->
 
     <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#dataInicialPI">
-        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#ano"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#PublicacaoImprenta"/>
         <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
         <rdfs:comment xml:lang="pt-br">Atributo referente ao ano incial de uma ppublicação periódica.</rdfs:comment>
         <rdfs:label xml:lang="pt-br">Ano incial da Imprenta</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#dataInicialPS -->
-
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#dataInicialPS">
-        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#ano"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#PublicacaoSeriada"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-        <rdfs:comment xml:lang="pt-br">Data inicial ou ano incial da publicação seriada</rdfs:comment>
-        <rdfs:label xml:lang="pt-br">Data inicial</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -1762,14 +1723,38 @@ Cada algarismo do CEP possui um significado. Da esquerda para a direita, os núm
     
 
 
+    <!-- http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#descricao -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#descricao">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#ISSN"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <rdfs:comment xml:lang="pt-br">Número Internacional Normalizado para Publicações Seriadas ou Número Internacional Normalizado das Publicações em Série, é um Número serial de oito dígitos, usado para identificação única de uma publicação em série, aceito internacionalmente. O ISSN é especialmente útil na distinção entre séries com o mesmo título e são utilizados na ordenação, catalogação, empréstimo entre bibliotecas e outras práticas em conexão com a literatura de série.</rdfs:comment>
+        <rdfs:isDefinedBy xml:lang="pt-br">Propriedade de dado que representa o International Standard Serial Number (ISSN), um código único atribuído a publicações seriadas como revistas e jornais, facilitando sua identificação e catalogação.</rdfs:isDefinedBy>
+        <rdfs:label xml:lang="pt-br">Código ISSN.</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#designacaoNumerica -->
 
     <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#designacaoNumerica">
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#PublicacaoSeriada"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#Obra"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
         <rdfs:comment xml:lang="pt-br">Informações referentes ao ano, número e volume de uma publicação seriada.</rdfs:comment>
         <rdfs:isDefinedBy xml:lang="pt-br">Propriedade de dado que representa as informações numéricas, como ano, número e volume, de uma publicação seriada, utilizada para catalogação e referência.</rdfs:isDefinedBy>
         <rdfs:label xml:lang="pt-br">Designação numérica</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#edicao -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#edicao">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#designacaoNumerica"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#Obra"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <rdfs:comment xml:lang="pt-br">caracteristica que faz parte da designação numérica de uma obra</rdfs:comment>
+        <rdfs:label xml:lang="pt-br">Edição</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -1782,6 +1767,17 @@ Cada algarismo do CEP possui um significado. Da esquerda para a direita, os núm
         <rdfs:comment xml:lang="pt-br">Sistema de transmissão de mensagens escritas através da internet ou de outras redes informáticas; eletronic mail ou correio eletrônico</rdfs:comment>
         <rdfs:isDefinedBy xml:lang="pt-br">Propriedade de dado que representa o sistema de transmissão de mensagens escritas através da internet ou de outras redes informáticas, comumente conhecido como correio eletrônico ou eletronic mail.</rdfs:isDefinedBy>
         <rdfs:label xml:lang="pt-br">Email ou correio eletrônico</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#enderecoEletronico -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#enderecoEletronico">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#HomePage"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+        <rdfs:comment xml:lang="pt-br">é a URL (Uniform Resource Locator) que identifica a página principal de um site na internet</rdfs:comment>
+        <rdfs:label xml:lang="pt-br">Endereço Eletônico</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -1908,158 +1904,14 @@ Exemplo: Marc 21.</rdfs:comment>
     
 
 
-    <!-- http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#nomeAreaConhecimento -->
+    <!-- http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#nome -->
 
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#nomeAreaConhecimento">
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#AreaDeConhecimento"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-        <rdfs:comment xml:lang="pt-br">Propriedade de dados que nomeia uma área de conhecimento de uma obra</rdfs:comment>
-        <rdfs:label xml:lang="pt-br">Nome da área de conhecimento</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#nomeCidade -->
-
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#nomeCidade">
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#Localidade"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-        <rdfs:comment xml:lang="pt-br">propriedade de dado que nomeia as cidades ou localidades</rdfs:comment>
-        <rdfs:label xml:lang="pt-br">Nome da Cidade</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#nomeDoResponsavel -->
-
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#nomeDoResponsavel">
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#Contato"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-        <rdfs:comment xml:lang="pt-br">Nome do responsável pela Biblioteca.</rdfs:comment>
-        <rdfs:isDefinedBy xml:lang="pt-br">Esta propriedade descreve a entidade (pessoa ou organização) responsãvel pela  biblioteca.</rdfs:isDefinedBy>
-        <rdfs:label xml:lang="pt-br">Nome do responsável</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#nomeEditora -->
-
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#nomeEditora">
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#Editora"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-        <rdfs:comment xml:lang="pt-br">designação da editora</rdfs:comment>
-        <rdfs:label xml:lang="pt-br">nome da Editora</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#nomeInstituicao -->
-
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#nomeInstituicao">
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#Instituicao"/>
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#nome">
+        <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
         <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
         <rdfs:comment xml:lang="pt-br">Designação das instâncias.</rdfs:comment>
         <rdfs:isDefinedBy xml:lang="pt-br">Propriedade de dado que representa a designação ou nome de instâncias, utilizada para identificar e referenciar entidades específicas em sistemas e registros.</rdfs:isDefinedBy>
-        <rdfs:label xml:lang="pt-br">Nome da Instituição</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#nomeMeioFisico -->
-
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#nomeMeioFisico">
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#MeioFisico"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-        <rdfs:comment xml:lang="pt-br">DEsignação do meio físico</rdfs:comment>
-        <rdfs:label xml:lang="pt-br">nome do meio físico</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#nomePais -->
-
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#nomePais">
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#Pais"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-        <rdfs:comment xml:lang="pt-br">proprideadade de dado que nomeia um Pais</rdfs:comment>
-        <rdfs:label xml:lang="pt-br">Nome do Pais</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#nomeReferenciador -->
-
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#nomeReferenciador">
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#Referenciador"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-        <rdfs:comment xml:lang="pt-br">Designação do referenciador</rdfs:comment>
-        <rdfs:label xml:lang="pt-br">nome do referenciador</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#nomeRegiao -->
-
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#nomeRegiao">
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#Regiao"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-        <rdfs:comment xml:lang="pt-br">Designação da Região</rdfs:comment>
-        <rdfs:label xml:lang="pt-br">nome da Região</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#nomeTabela -->
-
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#nomeTabela">
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#TabelaAreaDeConhecimento"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-        <rdfs:comment xml:lang="pt-br">Designação da tabela da [area de conhecimento</rdfs:comment>
-        <rdfs:label xml:lang="pt-br">nomde da tabela de ára de conhecimento</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#nomeTipoBiblioteca -->
-
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#nomeTipoBiblioteca">
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#TipoDeBiblioteca"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-        <rdfs:comment xml:lang="pt-br">Designação do tipo de biblioteca</rdfs:comment>
-        <rdfs:label xml:lang="pt-br">nome do tipo de biblioteca</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#nomeTituloComplementar -->
-
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#nomeTituloComplementar">
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#TituloComplementar"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-        <rdfs:comment xml:lang="pt-br">Nome do Título Complementar (Subtíulo)</rdfs:comment>
-        <rdfs:comment xml:lang="pt-br">prorpiedade de nomeia uma subtitulo, a abreviação ou complemento de titulo,</rdfs:comment>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#nomeUnidade -->
-
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#nomeUnidade">
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#Unidade"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-        <rdfs:comment xml:lang="pt-br">Designação da Unidade</rdfs:comment>
-        <rdfs:label xml:lang="pt-br">nomde da Editora</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#nomeUnidadeFederativa -->
-
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#nomeUnidadeFederativa">
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#UnidadeFederativa"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-        <rdfs:comment xml:lang="pt-br">Designação da Unidade Federativa (UF)</rdfs:comment>
-        <rdfs:label xml:lang="pt-br">nomde da Unidade Federativa</rdfs:label>
+        <rdfs:label xml:lang="pt-br">Nome</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -2104,7 +1956,7 @@ Exemplo: Marc 21.</rdfs:comment>
 
     <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#numero">
         <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#designacaoNumerica"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#PublicacaoSeriada"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#Obra"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
         <rdfs:comment xml:lang="pt-br">Número da publicação ou do periódico</rdfs:comment>
         <rdfs:label xml:lang="pt-br">Número da publicação</rdfs:label>
@@ -2172,9 +2024,9 @@ Exemplo: Marc 21.</rdfs:comment>
     
 
 
-    <!-- http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#servicos -->
+    <!-- http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#servicosBiblioteca -->
 
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#servicos">
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#servicosBiblioteca">
         <rdfs:domain rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#Biblioteca"/>
         <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
         <rdfs:comment xml:lang="pt-br">Serviços Bibliográficos gerenciados pelo Instituto Brasileiro de Informação em Ciência e Tecnologia (IBICT).</rdfs:comment>
@@ -2184,38 +2036,14 @@ Exemplo: Marc 21.</rdfs:comment>
     
 
 
-    <!-- http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#siglaAC -->
+    <!-- http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#sigla -->
 
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#siglaAC">
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#AgenteColetivo"/>
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#sigla">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#Res"/>
         <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-        <rdfs:comment xml:lang="pt-br">Abreviação ou palavra formada pelas iniciais de qualquer agente coletivo.</rdfs:comment>
-        <rdfs:isDefinedBy xml:lang="pt-br">Esta propriedade descreve uma abreviação ou palavra que é formada pelas iniciais de um agente coletivo. É essencial para representar de forma concisa e reconhecível informações complexas através de abreviações.</rdfs:isDefinedBy>
-        <rdfs:label xml:lang="pt-br">Sigla de Agente Coletivo</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#siglaIdioma -->
-
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#siglaIdioma">
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#Idioma"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-        <rdfs:comment xml:lang="pt-br">por exemplo, en ou En, são abreviaturas do idioma Inglês.</rdfs:comment>
-        <rdfs:isDefinedBy xml:lang="pt-br">propriedade de dados referente à abreviação do Idioma de qualquer Expressão</rdfs:isDefinedBy>
-        <rdfs:label xml:lang="pt-br">Sigla do Idioma</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#siglaUF -->
-
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#siglaUF">
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#UnidadeFederativa"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-        <rdfs:comment xml:lang="pt-br">Por exemplo, MG é abreviação do Estado Minas Gerais.</rdfs:comment>
-        <rdfs:isDefinedBy xml:lang="pt-br">atributo rederente a sigla ou abreviatura do nome ou denominação de uma Unidade Federativa ou Estado.</rdfs:isDefinedBy>
-        <rdfs:label xml:lang="pt-br">Sigla da Unidade Federativa ou Estado</rdfs:label>
+        <rdfs:comment xml:lang="pt-br">Abreviação ou palavra formada pelas iniciais de qualquer instância</rdfs:comment>
+        <rdfs:isDefinedBy xml:lang="pt-br">Esta propriedade descreve uma abreviação ou palavra que é formada pelas iniciais de qualquer intancias de qualquer classe. É essencial para representar de forma concisa e reconhecível informações complexas através de abreviações.</rdfs:isDefinedBy>
+        <rdfs:label xml:lang="pt-br">Sigla</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -2334,7 +2162,7 @@ Esta propriedade descreve se o tipo de material da obra, se o registro é de nat
 
     <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#volume">
         <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#designacaoNumerica"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#PublicacaoSeriada"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#Obra"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
         <rdfs:comment xml:lang="pt-br">Volume da publicação seriada ou do peródico</rdfs:comment>
         <rdfs:label xml:lang="pt-br">Volume da Publicação</rdfs:label>
@@ -3159,28 +2987,6 @@ Qualquer tipo de informação abstrata que não é registrada pelo uso de atribu
     
 
 
-    <!-- http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#AG_Leilões -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#AG_Leilões">
-        <rdf:type rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#PublicacaoRelacionada"/>
-        <rdfs:label xml:lang="pt-br">AG Leilões</rdfs:label>
-        <rdfs:label xml:lang="pt-br">Granja Avícola; A Granja do Ano; AG Leilões; Revista AG; Guia AG Leilões do Criador,  Suplementos de: A Granja</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#A_hora_veterinária -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#A_hora_veterinária">
-        <rdf:type rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#PublicacaoSeriada"/>
-        <hasISSN rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#0101-9163"/>
-        <tituloProprio xml:lang="pt-br">A Hora Veterinária</tituloProprio>
-        <rdfs:label xml:lang="pt-br">A hora veterinária</rdfs:label>
-        <rdfs:label xml:lang="pt-br">Exemplo de publicação da publicação seriada Bimestral</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
     <!-- http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#Acre -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#Acre">
@@ -3221,14 +3027,40 @@ Qualquer tipo de informação abstrata que não é registrada pelo uso de atribu
     
 
 
-    <!-- http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#BIB -->
+    <!-- http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#AreaConhecimento_1 -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#BIB">
-        <rdf:type rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#PublicacaoSeriada"/>
-        <hasNote rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#Publicação_impressa_suspensa"/>
-        <tituloProprio xml:lang="pt-br">BIB: revista brasileira de informação bibliográfica em Ciências Sociais</tituloProprio>
-        <rdfs:comment xml:lang="pt-br">BIB: revista brasileira de informação bibliográfica em Ciências Sociais</rdfs:comment>
-        <rdfs:label xml:lang="pt-br">BIB</rdfs:label>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#AreaConhecimento_1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#AreaDeConhecimento"/>
+        <owl:differentFrom rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#AssuntoContolado_1"/>
+        <owl:differentFrom rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#Obra_1"/>
+        <hasKnowledgeAreaTable rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#tabela_1"/>
+        <codigo xml:lang="pt-br">60700010</codigo>
+        <nome xml:lang="pt-br">Ciência da Informação</nome>
+        <rdfs:label xml:lang="pt-br">Area de Conhecimetno: Ciência da Informação</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#AssuntoContolado_1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#AssuntoContolado_1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#AssuntoControlado"/>
+        <owl:differentFrom rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#Obra_1"/>
+        <assunto xml:lang="pt-br">Ciência da Informação</assunto>
+        <fonte xml:lang="pt-br">Tesauro Brasileiro de Ciência da Informação.</fonte>
+        <rdfs:comment xml:lang="pt-br">Assunto controlado da revista Ciência da Informação</rdfs:comment>
+        <rdfs:label xml:lang="pt-br">Assunto controlado: Ciência da Informação</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#AssuntoControlado_2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#AssuntoControlado_2">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#AssuntoControlado"/>
+        <assunto xml:lang="pt-br">Ensino a distância</assunto>
+        <rdfs:comment xml:lang="pt-br">Aprendizado a distâcia USE Ensino a distância - Tesauro Brasileiro de Ciência da Informação</rdfs:comment>
+        <rdfs:label xml:lang="pt-br">Ensino a distância</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -3251,20 +3083,29 @@ Qualquer tipo de informação abstrata que não é registrada pelo uso de atribu
     
 
 
-    <!-- http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#BibliotecaSetorial -->
+    <!-- http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#Biblioteca_1 -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#BibliotecaSetorial">
-        <rdf:type rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#TipoDeBiblioteca"/>
-        <rdfs:label xml:lang="pt-br">Biblioteca setorial</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#Biblioteca_Especializada -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#Biblioteca_Especializada">
-        <rdf:type rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#TipoDeBiblioteca"/>
-        <rdfs:label xml:lang="pt-br">Biblioteca especializada</rdfs:label>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#Biblioteca_1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#Biblioteca"/>
+        <hasAddress rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#endereco_1"/>
+        <hasAffiliation rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#Instituicao_1"/>
+        <hasCollection rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#Colecao_1"/>
+        <hasCollection rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#Colecao_2"/>
+        <hasContact rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#Contato_1"/>
+        <hasLibraryType rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#tipoBiblioteca_1"/>
+        <hasUnit rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#Unidade_1"/>
+        <dataAtualizacaoBiblioteca rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2021-11-12T00:00:00</dataAtualizacaoBiblioteca>
+        <dataCadastroBiblioteca rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">1995-11-09T00:00:00</dataCadastroBiblioteca>
+        <denominacao xml:lang="pt-br">Lydia De Queiroz Sambaquy</denominacao>
+        <paginaWeb rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://biblioteca.ibict.br</paginaWeb>
+        <servicosBiblioteca xml:lang="pt-br">COMUT</servicosBiblioteca>
+        <servicosBiblioteca>Bibliodata</servicosBiblioteca>
+        <servicosBiblioteca>CCN</servicosBiblioteca>
+        <sigla xml:lang="pt-br">LQS</sigla>
+        <softwareUtilizado xml:lang="pt-br">Koha</softwareUtilizado>
+        <urlDoCatalogo rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://biblioteca.ibict.br.</urlDoCatalogo>
+        <rdfs:comment xml:lang="pt-br">Biblioteca do Instituto Brasileiro de Informação em Ciencia e Tecnologia (Ibict)</rdfs:comment>
+        <rdfs:label xml:lang="pt-br">Lydia de Queiroz Sambaquy</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -3275,9 +3116,9 @@ Qualquer tipo de informação abstrata que não é registrada pelo uso de atribu
         <rdf:type rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#Pais"/>
         <hasCity rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#Brasilia"/>
         <isCountryOf rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#DistritoFederal"/>
-        <isCountryPublicationOf rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#Ciência_da_Informação"/>
+        <isCountryPublicationOf rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#Obra_1"/>
         <codigoIso xml:lang="pt-br">BR</codigoIso>
-        <nomePais xml:lang="pt-br">Brasil</nomePais>
+        <nome xml:lang="pt-br">Brasil</nome>
         <rdfs:comment xml:lang="pt-br">Republica Federativa do Brasil</rdfs:comment>
         <rdfs:label xml:lang="pt-br">Brasil (BR)</rdfs:label>
     </owl:NamedIndividual>
@@ -3290,20 +3131,11 @@ Qualquer tipo de informação abstrata que não é registrada pelo uso de atribu
         <rdf:type rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#Localidade"/>
         <hasFederativeUnit rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#DistritoFederal"/>
         <isCityOf rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#Brasil"/>
-        <isLocalityOf rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#SAUS"/>
-        <nomeCidade xml:lang="pt-br">Brasília</nomeCidade>
+        <isLocalityOf rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#endereco_1"/>
+        <isPlacePublicationOf rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#1972"/>
+        <nome xml:lang="pt-br">Brasília</nome>
         <rdfs:comment xml:lang="pt-br">Cidade pertencente ao Distrtrito Federal, onde localiza-se a Biblioteca Lydia de Queiroz Sambaquy</rdfs:comment>
         <rdfs:label xml:lang="pt-br">Brasíslia</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#CI -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#CI">
-        <rdf:type rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#TermoLivre"/>
-        <rdfs:comment xml:lang="pt-br">Termo livre da resvista Ciência da Informação</rdfs:comment>
-        <rdfs:label xml:lang="pt-br">CI</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -3318,22 +3150,12 @@ Qualquer tipo de informação abstrata que não é registrada pelo uso de atribu
     
 
 
-    <!-- http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#Centaurus -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#Centaurus">
-        <rdf:type rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#Editora"/>
-        <rdfs:comment xml:lang="pt-br">Editora da publicação seriada: A Granja</rdfs:comment>
-        <rdfs:label xml:lang="pt-br">Centaurus</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
     <!-- http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#CentroOeste -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#CentroOeste">
         <rdf:type rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#Regiao"/>
-        <isRegionOf rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#CentroOeste"/>
-        <nomeRegiao xml:lang="pt-br"></nomeRegiao>
+        <isRegionOf rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#DistritoFederal"/>
+        <nome xml:lang="pt-br">Centro Oeste</nome>
         <rdfs:comment xml:lang="pt-br">Divisão regional onde localiza-se o Distrito Fereal e EstadoBiblioteca Lydia de Queiroz Sambaquy</rdfs:comment>
         <rdfs:label xml:lang="pt-br">Centro Oeste</rdfs:label>
     </owl:NamedIndividual>
@@ -3349,84 +3171,25 @@ Qualquer tipo de informação abstrata que não é registrada pelo uso de atribu
     
 
 
-    <!-- http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#Cien_da_Informação -->
+    <!-- http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#Colecao_1 -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#Cien_da_Informação">
-        <rdf:type rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#AreaDeConhecimento"/>
-        <owl:differentFrom rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#Ciencia_da_Informacao"/>
-        <owl:differentFrom rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#Ciência_da_Informação"/>
-        <hasKnowledgeAreaTable rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#Tabela_CAPES"/>
-        <codigo xml:lang="pt-br">60700010</codigo>
-        <nomeAreaConhecimento xml:lang="pt-br">Ciência da Informação</nomeAreaConhecimento>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#Colecao_1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#Colecao"/>
+        <contains rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#Obra_1"/>
+        <isCollectionOf rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#Biblioteca_1"/>
+        <conteudoColecao xml:lang="pt-br">Ano: 2022
+Mês: 5
+Volume: 2, 3, 4
+Ambiente: Digital</conteudoColecao>
+        <rdfs:comment xml:lang="pt-br">Por exemplo a coleção EMBRAPA/CPAF-AC/BT. Trasncrição de uma coelção: (AC) 1973 2 (1); 1974 3 (2); 1977–79 6-8; 1981–85.</rdfs:comment>
+        <rdfs:label xml:lang="pt-br">EMBRAPA/CPAF-AC/BT</rdfs:label>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#Ciencia_da_Informacao -->
+    <!-- http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#Colecao_2 -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#Ciencia_da_Informacao">
-        <rdf:type rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#AssuntoControlado"/>
-        <owl:differentFrom rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#Ciência_da_Informação"/>
-        <assunto xml:lang="pt-br">Ciência da Informação</assunto>
-        <rdfs:comment xml:lang="pt-br">Assunto controlado da revista Ciência da Informação</rdfs:comment>
-        <rdfs:label xml:lang="pt-br">Ciência da Informação</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#Ciênc._Inf. -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#Ciênc._Inf.">
-        <rdf:type rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#TituloComplementar"/>
-        <isTitleComplementOf rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#Ciência_da_Informação"/>
-        <nomeTituloComplementar xml:lang="pt-br">Ciên. Inf.</nomeTituloComplementar>
-        <rdfs:comment xml:lang="pt-br">Título abreviado de: Ciência da Informação</rdfs:comment>
-        <rdfs:label xml:lang="pt-br">Ciênc._Inf.</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#Ciência_da_Informação -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#Ciência_da_Informação">
-        <rdf:type rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#PublicacaoSeriada"/>
-        <hasControlledSubject rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#Ciencia_da_Informacao"/>
-        <hasFreeTerm rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#CI"/>
-        <hasHomePage rdf:resource="https://revista.ibict.br/ciinf"/>
-        <hasISSN rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#0100-1965"/>
-        <hasKnowledgeField rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#Cien_da_Informação"/>
-        <hasPublicationDate rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#1972"/>
-        <hasPublicationDate rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#2015"/>
-        <hasPublicationLanguage rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#Ingles"/>
-        <hasPublicationLanguage rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#Portugues"/>
-        <hasTitleComplement rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#Ciênc._Inf."/>
-        <indexedBy rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#Information_science_abstracts"/>
-        <indexedBy rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#Library_&amp;_information"/>
-        <isContainedIn rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#EMBRAPA/CPAF-AC/BT"/>
-        <alfabetacao xml:lang="pt-br">0</alfabetacao>
-        <conteudo xml:lang="pt-br">Científico</conteudo>
-        <dataInicialPS xml:lang="pt-br">1972</dataInicialPS>
-        <formatoDeCatalogacao xml:lang="pt-br">AACR2</formatoDeCatalogacao>
-        <formatoDeCatalogacao xml:lang="pt-br">Dublin Core</formatoDeCatalogacao>
-        <formatoDeCatalogacao xml:lang="pt-br">MARC 21</formatoDeCatalogacao>
-        <frequencia xml:lang="pt-br">Quadrimestral</frequencia>
-        <nivelBibliografico xml:lang="pt-br">Periódico</nivelBibliografico>
-        <numero rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</numero>
-        <responsavelIntelectual xml:lang="pt-br">Instituto Brasileiro de Informação em Ciência e Tecnologia (Ibict)</responsavelIntelectual>
-        <situacaoDaPublicacao xml:lang="pt-br">Corrente (Ativo)</situacaoDaPublicacao>
-        <tipo xml:lang="pt-br">Periódico</tipo>
-        <tipoDeRegistro xml:lang="pt-br">Material textual</tipoDeRegistro>
-        <tituloProprio xml:lang="pt-br">Ciência da Informação</tituloProprio>
-        <volume rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</volume>
-        <rdfs:comment xml:lang="pt-br">publicação seriada quadrimestral.</rdfs:comment>
-        <rdfs:label xml:lang="pt-br">Ciência da Informação</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#Ciência_da_informação_e_Bibliografias -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#Ciência_da_informação_e_Bibliografias">
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#Colecao_2">
         <rdf:type rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#Colecao"/>
         <rdfs:comment xml:lang="pt-br">Exemplo de Coleção de periódicos por assunto</rdfs:comment>
         <rdfs:label xml:lang="pt-br">Ciência da informação e Bibliografias</rdfs:label>
@@ -3434,22 +3197,15 @@ Qualquer tipo de informação abstrata que não é registrada pelo uso de atribu
     
 
 
-    <!-- http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#CoordeDeServicosBibliograficos -->
+    <!-- http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#Contato_1 -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#CoordeDeServicosBibliograficos">
-        <rdf:type rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#Unidade"/>
-        <rdfs:comment xml:lang="pt-br">Unidade do Ibict que realiza a coordenação e gestão associada a Biblioteca Lydia Queiroz Sambaquy</rdfs:comment>
-        <rdfs:label xml:lang="pt-br">Coordenação de Serviços Bibliográficos</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#Cuidados_básicos_com_o_gado -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#Cuidados_básicos_com_o_gado">
-        <rdf:type rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#TermoLivre"/>
-        <rdfs:comment xml:lang="pt-br">exemplo de  termo livre</rdfs:comment>
-        <rdfs:label xml:lang="pt-br">Cuidados básicos com o gado</rdfs:label>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#Contato_1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#Contato"/>
+        <isContactOf rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#Biblioteca_1"/>
+        <email xml:lang="pt-br">biblioteca@ibict.br</email>
+        <telefoneMovel xml:lang="pt-br">(61)32176145</telefoneMovel>
+        <rdfs:comment xml:lang="pt-br">Informação do  contato da Biblioteca do IBICT.</rdfs:comment>
+        <rdfs:label xml:lang="pt-br">(61)32176145</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -3461,20 +3217,10 @@ Qualquer tipo de informação abstrata que não é registrada pelo uso de atribu
         <hasCountry rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#Brasil"/>
         <hasRegion rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#CentroOeste"/>
         <isFederativeUnitOf rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#Brasilia"/>
-        <nomeUnidadeFederativa xml:lang="pt-br">Distrito federal</nomeUnidadeFederativa>
-        <siglaUF xml:lang="pt-br">DF</siglaUF>
+        <nome xml:lang="pt-br">Distrito Federal</nome>
+        <sigla xml:lang="pt-br">DF</sigla>
         <rdfs:comment xml:lang="pt-br">Unidade federativa do Brasil representada pela sigla DF</rdfs:comment>
         <rdfs:label xml:lang="pt-br">Distrito Federal</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#Eine_kleine_Nachtmusik -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#Eine_kleine_Nachtmusik">
-        <rdf:type rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#Obra"/>
-        <tituloProprio xml:lang="pt-br">Eine Kleine Nachtmusik</tituloProprio>
-        <rdfs:label xml:lang="pt-br">Eine kleine Nachtmusik</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -3482,19 +3228,9 @@ Qualquer tipo de informação abstrata que não é registrada pelo uso de atribu
     <!-- http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#End_Eletronico_da_Biblioteca -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#End_Eletronico_da_Biblioteca">
-        <rdf:type rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#HomePage"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#Biblioteca"/>
         <rdfs:comment xml:lang="pt-br">Endereço eletònico da Biblioteca do Ibict</rdfs:comment>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://www.gov.br/ibict/pt-br/assuntos/informacao-cientifica/biblioteca-do-ibict</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#Ensino_a_distância -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#Ensino_a_distância">
-        <rdf:type rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#AssuntoControlado"/>
-        <rdfs:comment xml:lang="pt-br">Aprendizado a distâcia USE Ensino a distância - Tesauro Brasileiro de Ciência da Informação</rdfs:comment>
-        <rdfs:label xml:lang="pt-br">Ensino a distância</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -3529,16 +3265,6 @@ Qualquer tipo de informação abstrata que não é registrada pelo uso de atribu
     
 
 
-    <!-- http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#Hora_Vet -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#Hora_Vet">
-        <rdf:type rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#TituloComplementar"/>
-        <rdfs:comment xml:lang="pt-br">Título abreviado da publicação seriada: A Hora Veterinária</rdfs:comment>
-        <rdfs:label xml:lang="pt-br">Hora Vet.</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
     <!-- http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#IBCT -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#IBCT">
@@ -3549,75 +3275,98 @@ Qualquer tipo de informação abstrata que não é registrada pelo uso de atribu
     
 
 
-    <!-- http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#IBICT -->
+    <!-- http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#ISSN_1 -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#IBICT">
-        <rdf:type rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#Editora"/>
-        <owl:sameAs rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#Ibict"/>
-        <nomeEditora xml:lang="pt-br">Instituto Brasileiro de Informação em Ciência e Tecnologia</nomeEditora>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#ISSN_1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#ISSN"/>
+        <hasSupport rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#meioFisico_1"/>
+        <isISSNOf rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#Obra_1"/>
+        <descricao xml:lang="pt-br">0100-1965</descricao>
+        <rdfs:comment xml:lang="pt-br">IISSN impresso da publicação seriada: Ciência da Informação</rdfs:comment>
+        <rdfs:label xml:lang="pt-br">0100-1965.</rdfs:label>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#Ibict -->
+    <!-- http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#ISSN_2 -->
 
-    <rdf:Description rdf:about="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#Ibict"/>
-    
-
-
-    <!-- http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#Ibict -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#Ibict">
-        <rdf:type rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#Instituicao"/>
-        <hasInstituitionAddress rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#SAUS"/>
-        <hasInstituitionAddress rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#-15.8024936"/>
-        <hasInstituitionAddress rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#-47.8824090"/>
-        <hasInstituitionAddress rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#70070-912"/>
-        <nomeInstituicao xml:lang="pt-br">Instituto Brasileiro de Informação em Ciência e Tecnologia</nomeInstituicao>
-        <rdfs:comment xml:lang="pt-br">Instituto Brasileiro de Informação em Ciência e Tecnologia (IBICT)</rdfs:comment>
-        <rdfs:comment xml:lang="pt-br">Nome da organização de pesquisa</rdfs:comment>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#ISSN_2">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#ISSN"/>
+        <isISSNOf rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#Obra_2"/>
+        <descricao xml:lang="pt-br">0101-9163</descricao>
+        <rdfs:comment xml:lang="pt-br">Código ISSN impresso da publicação seriada: A hora veterinária</rdfs:comment>
+        <rdfs:label xml:lang="pt-br">0101-9163</rdfs:label>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#Information_science_abstracts -->
+    <!-- http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#ISSN_3 -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#Information_science_abstracts">
-        <rdf:type rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#Referenciador"/>
-        <rdfs:comment xml:lang="pt-br">Indexador da publicação seriada</rdfs:comment>
-        <rdfs:label xml:lang="pt-br">Information science abstracts</rdfs:label>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#ISSN_3">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#ISSN"/>
+        <descricao xml:lang="pt-br">0271-5694</descricao>
+        <rdfs:comment xml:lang="pt-br">ISSN da revista Wines &amp; Vines Yearbook of the Wine Industry</rdfs:comment>
+        <rdfs:label xml:lang="pt-br">0271-5694</rdfs:label>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#Ingles -->
+    <!-- http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#ISSN_4 -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#Ingles">
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#ISSN_4">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#ISSN"/>
+        <descricao xml:lang="pt-br">0096-8471</descricao>
+        <rdfs:label xml:lang="pt-br">0096-8471</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#Idioma_1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#Idioma_1">
         <rdf:type rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#Idioma"/>
-        <siglaIdioma xml:lang="pt-br">en</siglaIdioma>
+        <nome xml:lang="pt-br">português</nome>
+        <sigla xml:lang="pt-br">pt</sigla>
+        <rdfs:isDefinedBy xml:lang="pt">Idioma do Brasil.</rdfs:isDefinedBy>
+        <rdfs:label xml:lang="pt-br">Português-BR</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#Idioma_2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#Idioma_2">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#Idioma"/>
+        <nome xml:lang="pt-br">inglês</nome>
+        <sigla xml:lang="pt-br">en</sigla>
+        <rdfs:comment xml:lang="pt-br">Uma língua germânica ocidental que se originou nos reinos anglo-saxões da Inglaterra e se espalhou para outras regiões, tornando-se um dos idiomas mais falados no mundo. Hoje, é a língua oficial de diversos países, incluindo Estados Unidos, Reino Unido, Canadá, Austrália e Nova Zelândia, além de ser amplamente utilizada como segunda língua em muitos outros.</rdfs:comment>
         <rdfs:label xml:lang="pt-br">Inglês</rdfs:label>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#Lydia_De_Queiroz_Sambaquy -->
+    <!-- http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#Idioma_3 -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#Lydia_De_Queiroz_Sambaquy">
-        <rdf:type rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#Biblioteca"/>
-        <hasAddress rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#SAUS"/>
-        <hasAddress rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#-15.8024936"/>
-        <hasAddress rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#-47.8824090"/>
-        <hasAddress rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#70070-912"/>
-        <hasAdminNature rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#publica"/>
-        <hasAffiliation rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#Ibict"/>
-        <hasCollection rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#Ciência_da_informação_e_Bibliografias"/>
-        <hasCollection rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#EMBRAPA/CPAF-AC/BT"/>
-        <hasContact rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#(61)32176145"/>
-        <hasContact rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#biblioteca@ibict.br"/>
-        <hasLibraryType rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#Biblioteca_Especializada"/>
-        <hasUnit rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#IBCT"/>
-        <rdfs:comment xml:lang="pt-br">Biblioteca do Instituto Brasileiro de Informação em Ciencia e Tecnologia (Ibict)</rdfs:comment>
-        <rdfs:label xml:lang="pt-br">Lydia de Queiroz Sambaquy</rdfs:label>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#Idioma_3">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#Idioma"/>
+        <nome xml:lang="pt-br">espanhol</nome>
+        <sigla xml:lang="pt-br">es</sigla>
+        <rdfs:comment xml:lang="pt-br">Idioma ou linguagem</rdfs:comment>
+        <rdfs:label xml:lang="pt-br">espanhol</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#Instituicao_1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#Instituicao_1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#Instituicao"/>
+        <hasInstituitionAddress rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#endereco_1"/>
+        <cnpj xml:lang="pt-br">04.082.993/0001-49</cnpj>
+        <nome xml:lang="pt-br">Instituto Brasileiro de Informação em Ciência e Tecnologia</nome>
+        <sigla xml:lang="pt-br">Ibict</sigla>
+        <rdfs:comment xml:lang="pt-br">Instituto Brasileiro de Informação em Ciência e Tecnologia (IBICT)</rdfs:comment>
+        <rdfs:comment xml:lang="pt-br">Nome da organização de pesquisa</rdfs:comment>
     </owl:NamedIndividual>
     
 
@@ -3652,15 +3401,6 @@ Qualquer tipo de informação abstrata que não é registrada pelo uso de atribu
     
 
 
-    <!-- http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#Medicina_Veterinaria -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#Medicina_Veterinaria">
-        <rdf:type rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#AreaDeConhecimento"/>
-        <rdfs:label xml:lang="pt-br">Medicina Veterinária</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
     <!-- http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#MinasGerais -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#MinasGerais">
@@ -3685,6 +3425,112 @@ Qualquer tipo de informação abstrata que não é registrada pelo uso de atribu
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#Norte">
         <rdf:type rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#Regiao"/>
         <rdfs:label xml:lang="pt-br">Norte</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#Obra_1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#Obra_1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#PublicacaoSeriada"/>
+        <hasControlledSubject rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#AssuntoContolado_1"/>
+        <hasFreeTerm rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#termoLivre_1"/>
+        <hasHomePage rdf:resource="https://revista.ibict.br/Homepage_1"/>
+        <hasISSN rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#ISSN_1"/>
+        <hasKnowledgeField rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#AreaConhecimento_1"/>
+        <hasNote rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#nota_1"/>
+        <hasPublicationDate rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#1972"/>
+        <hasPublicationLanguage rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#Idioma_1"/>
+        <hasPublicationLanguage rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#Idioma_2"/>
+        <hasTitleComplement rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#tituloComplementar_1"/>
+        <indexedBy rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#referenciador_1"/>
+        <indexedBy rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#referenciador_2"/>
+        <isContainedIn rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#Colecao_1"/>
+        <alfabetacao xml:lang="pt-br">0</alfabetacao>
+        <anoInicial xml:lang="pt-br">1972</anoInicial>
+        <conteudo xml:lang="pt-br">Científico</conteudo>
+        <formatoDeCatalogacao xml:lang="pt-br">AACR2</formatoDeCatalogacao>
+        <formatoDeCatalogacao xml:lang="pt-br">Dublin Core</formatoDeCatalogacao>
+        <formatoDeCatalogacao xml:lang="pt-br">MARC 21</formatoDeCatalogacao>
+        <frequencia xml:lang="pt-br">Quadrimestral</frequencia>
+        <nivelBibliografico xml:lang="pt-br">Periódico</nivelBibliografico>
+        <numero rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</numero>
+        <responsavelIntelectual xml:lang="pt-br">Instituto Brasileiro de Informação em Ciência e Tecnologia (Ibict)</responsavelIntelectual>
+        <situacaoDaPublicacao xml:lang="pt-br">Corrente (Ativo)</situacaoDaPublicacao>
+        <tipo xml:lang="pt-br">Periódico</tipo>
+        <tipoDeRegistro xml:lang="pt-br">Material textual</tipoDeRegistro>
+        <tituloProprio xml:lang="pt-br">Ciência da Informação</tituloProprio>
+        <volume rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</volume>
+        <rdfs:comment xml:lang="pt-br">publicação seriada quadrimestral.</rdfs:comment>
+        <rdfs:label xml:lang="pt-br">Ciência da Informação</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#Obra_2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#Obra_2">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#PublicacaoSeriada"/>
+        <hasISSN rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#ISSN_2"/>
+        <tituloProprio xml:lang="pt-br">A Hora Veterinária</tituloProprio>
+        <rdfs:label xml:lang="pt-br">A hora veterinária</rdfs:label>
+        <rdfs:label xml:lang="pt-br">Exemplo de publicação da publicação seriada Bimestral</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#Obra_3 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#Obra_3">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#PublicacaoSeriada"/>
+        <hasISSN rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#ISSN_3"/>
+        <hasNote rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#nota_2"/>
+        <tituloProprio xml:lang="pt-br">Wines &amp; Vines Yearbook of the Wine Industry</tituloProprio>
+        <rdfs:label xml:lang="pt-br">Wines &amp; Vines Yearbook of the Wine Industry</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#Obra_4 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#Obra_4">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#PublicacaoSeriada"/>
+        <hasISSN rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#ISSN_4"/>
+        <hasNote rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#nota_4"/>
+        <tituloProprio xml:lang="pt-br">Wine Review (Los Angeles)</tituloProprio>
+        <rdfs:label xml:lang="pt-br">Wine Review (Los Angeles)</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#Obra_6 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#Obra_6">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#Obra"/>
+        <tituloProprio xml:lang="pt-br">Bibliografia Brasileira de Ciência da Informação</tituloProprio>
+        <rdfs:label xml:lang="pt-br">Bibliografia Brasileira de Ciência da Informação</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#Obra_7 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#Obra_7">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#PublicacaoSeriada"/>
+        <hasNote rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#nota_3"/>
+        <tituloProprio xml:lang="pt-br">BIB: revista brasileira de informação bibliográfica em Ciências Sociais</tituloProprio>
+        <rdfs:comment xml:lang="pt-br">BIB: revista brasileira de informação bibliográfica em Ciências Sociais</rdfs:comment>
+        <rdfs:label xml:lang="pt-br">BIB</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#Obra_8 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#Obra_8">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#Obra"/>
+        <tituloProprio xml:lang="pt-br">Eine Kleine Nachtmusik</tituloProprio>
+        <rdfs:label xml:lang="pt-br">Eine kleine Nachtmusik</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -3744,34 +3590,6 @@ Qualquer tipo de informação abstrata que não é registrada pelo uso de atribu
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#Porto_Alegre">
         <rdf:type rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#Localidade"/>
         <rdfs:label xml:lang="pt-br">Porto Alegre</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#Portugues -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#Portugues">
-        <rdf:type rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#Idioma"/>
-        <siglaIdioma xml:lang="pt-br">pt-BR</siglaIdioma>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#Publicação_impressa_suspensa -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#Publicação_impressa_suspensa">
-        <rdf:type rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#Nota"/>
-        <rdfs:comment xml:lang="pt-br">[Nota para publicação seriada BIB: revista brasileira de informação bibliográfica em Ciências Sociais].</rdfs:comment>
-        <rdfs:label xml:lang="pt-br">Publicação impressa suspensa}</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#Revista_impressa -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#Revista_impressa">
-        <rdf:type rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#MeioFisico"/>
-        <rdfs:comment xml:lang="pt-br">Um exemplo de material  ou meio físico</rdfs:comment>
     </owl:NamedIndividual>
     
 
@@ -3837,16 +3655,6 @@ Qualquer tipo de informação abstrata que não é registrada pelo uso de atribu
     
 
 
-    <!-- http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#SAUS -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#SAUS">
-        <rdf:type rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#Endereco"/>
-        <rdfs:comment xml:lang="pt-br">Logradouro da Biblioteca do Ibict</rdfs:comment>
-        <rdfs:label xml:lang="pt-br">Setor de Autarquias Sul (SAUS), Quadra 05, Lote 06, Bloco H 5º andar.</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
     <!-- http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#SantaCatarina -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#SantaCatarina">
@@ -3874,17 +3682,6 @@ Qualquer tipo de informação abstrata que não é registrada pelo uso de atribu
         <rdf:type rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#Localidade"/>
         <rdfs:comment xml:lang="pt-br">Cidade do Estado de Sção Paulo.</rdfs:comment>
         <rdfs:label xml:lang="pt-br">São Paulo</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#Scielo -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#Scielo">
-        <rdf:type rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#Referenciador"/>
-        <rdfs:comment xml:lang="pt-br">Dados de critérios para o Diretório Indexador Scielo</rdfs:comment>
-        <rdfs:label xml:lang="pt-br">Scielo</rdfs:label>
-        <rdfs:seeAlso rdf:resource="https://www.scielo.br/about/criterios-scielo-brasil"/>
     </owl:NamedIndividual>
     
 
@@ -3917,38 +3714,6 @@ Qualquer tipo de informação abstrata que não é registrada pelo uso de atribu
     
 
 
-    <!-- http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#Suplementos_de_A_Granja -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#Suplementos_de_A_Granja">
-        <rdf:type rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#PublicacaoRelacionada"/>
-        <rdfs:comment xml:lang="pt-br">Suplemento de A Granja.</rdfs:comment>
-        <rdfs:label xml:lang="pt-br">Granja Avícola; A Granja do Ano</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#Tabela_CAPES -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#Tabela_CAPES">
-        <rdf:type rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#TabelaAreaDeConhecimento"/>
-        <nomeTabela xml:lang="pt-br">Tabela de Áreas de Conhecimento/Avaliação - CAPES</nomeTabela>
-        <rdfs:comment xml:lang="pt-br">Classificação das Áreas do Conhecimento - 1º Nível: Grande área; 2º Nível: Área do conhecimento; 3º Nível: Subárea; 4º Nível: Especialidade</rdfs:comment>
-        <rdfs:label xml:lang="pt-br">Tabela de áreas do conhecimento /avaliação CAPES</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#Tabela_CNPq -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#Tabela_CNPq">
-        <rdf:type rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#TabelaAreaDeConhecimento"/>
-        <nomeTabela xml:lang="pt"></nomeTabela>
-        <rdfs:comment xml:lang="pt-br">Grande área; Área; Sub-área; Especialidade</rdfs:comment>
-        <rdfs:label xml:lang="pt-br">Tabela de áreas do conhecimento CNPq (ou  Conselho Nacional de Desenvolvimento Científico e Tecnológico).</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
     <!-- http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#Tocantins -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#Tocantins">
@@ -3959,109 +3724,248 @@ Qualquer tipo de informação abstrata que não é registrada pelo uso de atribu
     
 
 
-    <!-- http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#Técnicas_de_recuperação_da_informação -->
+    <!-- http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#Unidade_1 -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#Técnicas_de_recuperação_da_informação">
-        <rdf:type rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#AreaDeConhecimento"/>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#Unidade_1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#Unidade"/>
+        <nome xml:lang="pt-br">Coordenação de Serviços Bibliográficos</nome>
+        <sigla xml:lang="pt-br">COBIB</sigla>
+        <rdfs:comment>Unidade do IBICT que administra a biblioteca</rdfs:comment>
+        <rdfs:label>Coordenação de Serviços Bibliográficos (COBIB)</rdfs:label>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#espanhol -->
+    <!-- http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#editora_1 -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#espanhol">
-        <rdf:type rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#Idioma"/>
-        <siglaIdioma xml:lang="pt-br">es</siglaIdioma>
-        <rdfs:comment xml:lang="pt-br">Idioma ou linguagem</rdfs:comment>
-        <rdfs:label xml:lang="pt-br">espanhol</rdfs:label>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#editora_1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#Editora"/>
+        <publisherOf rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#1972"/>
+        <nome xml:lang="pt-br">Instituto Brasileiro de Informação em Ciência e Tecnologia</nome>
+        <rdfs:label xml:lang="pt-br">Instituto Brasileiro de Informação em Ciência e Tecnologia</rdfs:label>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#impresso -->
+    <!-- http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#editora_2 -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#impresso">
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#editora_2">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#Editora"/>
+        <nome xml:lang="pt-br">Centaurus</nome>
+        <rdfs:comment xml:lang="pt-br">Editora da publicação seriada: A Granja</rdfs:comment>
+        <rdfs:label xml:lang="pt-br">Centaurus</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#endereco_1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#endereco_1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#Endereco"/>
+        <isLocatedIn rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#Brasilia"/>
+        <cep xml:lang="pt-br">70070-912</cep>
+        <latitude rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">-15.8024936</latitude>
+        <logradouro xml:lang="pt-br">Setor de Autarquias Sul (SAUS), Quadra 05, Lote 06, Bloco H 5º andar.</logradouro>
+        <longitude rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">-47.8824090</longitude>
+        <rdfs:comment xml:lang="pt-br">Logradouro da Biblioteca do Ibict</rdfs:comment>
+        <rdfs:label xml:lang="pt-br">Setor de Autarquias Sul (SAUS), Quadra 05, Lote 06, Bloco H 5º andar.</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#meioFisico_1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#meioFisico_1">
         <rdf:type rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#MeioFisico"/>
-        <isSupportOf rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#0101-9163"/>
-        <nomeMeioFisico xml:lang="pt-br"></nomeMeioFisico>
+        <isSupportOf rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#ISSN_2"/>
+        <nome xml:lang="pt-br">Impresso</nome>
         <rdfs:comment xml:lang="pt-br">meio físico dos códigos ISSN</rdfs:comment>
         <rdfs:label xml:lang="pt-br">Impresso</rdfs:label>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#privada -->
+    <!-- http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#naturezaAdministrativa_1 -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#privada">
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#naturezaAdministrativa_1">
         <rdf:type rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#NaturezaAdministrativa"/>
-        <rdfs:comment xml:lang="pt-br">Categoria da natureza administrativa de uma biblioteca.[Natureza administrativa da biblioteca..</rdfs:comment>
-        <rdfs:label xml:lang="pt-br">privada</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#publica -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#publica">
-        <rdf:type rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#NaturezaAdministrativa"/>
+        <isAdminNatureOf rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#Instituicao_1"/>
+        <nome xml:lang="pt-br">Pública</nome>
         <rdfs:comment xml:lang="pt-br">Categoria da natureza administrativa de uma biblioteca</rdfs:comment>
         <rdfs:label xml:lang="pt-br">Pública</rdfs:label>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#(61)32176145 -->
+    <!-- http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#naturezaAdministrativa_2 -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#(61)32176145">
-        <rdf:type rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#Contato"/>
-        <isContactOf rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#Lydia_De_Queiroz_Sambaquy"/>
-        <telefoneMovel xml:lang="pt-br"></telefoneMovel>
-        <rdfs:comment xml:lang="pt-br">Informação do  contato da Biblioteca do IBICT.</rdfs:comment>
-        <rdfs:label xml:lang="pt-br">(61)32176145</rdfs:label>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#naturezaAdministrativa_2">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#NaturezaAdministrativa"/>
+        <nome xml:lang="pt-br">Federal</nome>
+        <rdfs:comment xml:lang="pt-br">Tipo de natureza administratica de uma institução</rdfs:comment>
+        <rdfs:label xml:lang="pt-br">Federal</rdfs:label>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#-15.8024936 -->
+    <!-- http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#naturezaAdministrativa_3 -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#-15.8024936">
-        <rdf:type rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#Endereco"/>
-        <rdfs:comment xml:lang="pt-br">latitude da Biblioteca do Ibict</rdfs:comment>
-        <rdfs:label xml:lang="pt-br">-15.8024936</rdfs:label>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#naturezaAdministrativa_3">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#NaturezaAdministrativa"/>
+        <nome xml:lang="pt-br">Privada</nome>
+        <rdfs:comment xml:lang="pt-br">Categoria da natureza administrativa de uma biblioteca.[Natureza administrativa da biblioteca..</rdfs:comment>
+        <rdfs:label xml:lang="pt-br">privada</rdfs:label>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#-47.8824090 -->
+    <!-- http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#nota_1 -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#-47.8824090">
-        <rdf:type rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#Endereco"/>
-        <rdfs:comment xml:lang="pt-br">Longitude da Biblioteca</rdfs:comment>
-        <rdfs:label xml:lang="pt-br">-47.8824090</rdfs:label>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#nota_1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#Nota"/>
+        <notasGerais xml:lang="pt-br">Disponível online, em texto integral de 1995
+- presente, no portal de periódicos da CAPES</notasGerais>
+        <rdfs:label xml:lang="pt-br">Nota Geral</rdfs:label>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#0100-1965 -->
+    <!-- http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#nota_2 -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#0100-1965">
-        <rdf:type rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#ISSN"/>
-        <isISSNOf rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#A_hora_veterinária"/>
-        <codigoISSN xml:lang="pt-br"></codigoISSN>
-        <rdfs:comment xml:lang="pt-br">IISSN impresso da publicação seriada: Ciência da Informação</rdfs:comment>
-        <rdfs:label xml:lang="pt-br">0100-1965.</rdfs:label>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#nota_2">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#Nota"/>
+        <notaDeSuplemento xml:lang="pt-br">Tem suplemento: Wines &amp; Vines Annual Directory (ISSN 0084-0351).</notaDeSuplemento>
+        <rdfs:label xml:lang="pt-br">Nota de Suplemento</rdfs:label>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#0101-9163 -->
+    <!-- http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#nota_3 -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#0101-9163">
-        <rdf:type rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#ISSN"/>
-        <hasSupport rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#impresso"/>
-        <codigoISSN></codigoISSN>
-        <rdfs:comment xml:lang="pt-br">Código ISSN impresso da publicação seriada: A hora veterinária</rdfs:comment>
-        <rdfs:label xml:lang="pt-br">0101-9163</rdfs:label>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#nota_3">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#Nota"/>
+        <notasGerais xml:lang="pt-br">Publicação impressa suspensa</notasGerais>
+        <rdfs:comment xml:lang="pt-br">Nota para publicação seriada BIB: revista brasileira de informação bibliográfica em Ciências Sociais.</rdfs:comment>
+        <rdfs:label xml:lang="pt-br">Publicação impressa suspensa</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#nota_4 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#nota_4">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#Nota"/>
+        <notaDeComplexidade xml:lang="pt">Absorveu: Wine East (ISSN 0892-662X).</notaDeComplexidade>
+        <rdfs:label xml:lang="pt-br">Nota de Complexidade</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#obra_5 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#obra_5">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#Obra"/>
+        <hasRelatedPublication rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#Obra_6"/>
+        <tituloProprio xml:lang="pt-br">Bibliografia Brasileira de Documentação.</tituloProprio>
+        <rdfs:label xml:lang="pt-br">Bibliografia Brasileira de Documentação</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#referenciador_1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#referenciador_1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#Referenciador"/>
+        <nome xml:lang="pt-br">Library &amp; information science abstracts</nome>
+        <rdfs:comment xml:lang="pt-br">Indexador de uma publicação seriada</rdfs:comment>
+        <rdfs:label xml:lang="pt-br">Library &amp; information science abstracts</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#referenciador_2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#referenciador_2">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#Referenciador"/>
+        <nome xml:lang="pt-br">Information science abstracts</nome>
+        <rdfs:comment xml:lang="pt-br">Indexador da publicação seriada</rdfs:comment>
+        <rdfs:label xml:lang="pt-br">Information science abstracts</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#referenciador_3 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#referenciador_3">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#Referenciador"/>
+        <nome xml:lang="pt-br">Scielo</nome>
+        <rdfs:comment xml:lang="pt-br">Dados de critérios para o Diretório Indexador Scielo</rdfs:comment>
+        <rdfs:label xml:lang="pt-br">Scielo</rdfs:label>
+        <rdfs:seeAlso rdf:resource="https://www.scielo.br/about/criterios-scielo-brasil"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#tabela_1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#tabela_1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#TabelaAreaDeConhecimento"/>
+        <nome xml:lang="pt-br">Tabela de Áreas de Conhecimento/Avaliação - CAPES</nome>
+        <rdfs:comment xml:lang="pt-br">Classificação das Áreas do Conhecimento - 1º Nível: Grande área; 2º Nível: Área do conhecimento; 3º Nível: Subárea; 4º Nível: Especialidade</rdfs:comment>
+        <rdfs:label xml:lang="pt-br">Tabela CAPES</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#tabela_2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#tabela_2">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#TabelaAreaDeConhecimento"/>
+        <nome xml:lang="pt-br">Tabela de áreas do conhecimento CNPq (ou  Conselho Nacional de Desenvolvimento Científico e Tecnológico).</nome>
+        <rdfs:comment xml:lang="pt-br">Grande área; Área; Sub-área; Especialidade</rdfs:comment>
+        <rdfs:label xml:lang="pt-br">Tabela o CNPq</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#termoLivre_1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#termoLivre_1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#TermoLivre"/>
+        <rdfs:comment xml:lang="pt-br">Termo livre da resvista Ciência da Informação</rdfs:comment>
+        <rdfs:label xml:lang="pt-br">CI</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#tipoBiblioteca_1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#tipoBiblioteca_1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#TipoDeBiblioteca"/>
+        <nome xml:lang="pt-br">Biblioteca Setorial</nome>
+        <rdfs:label xml:lang="pt-br">Biblioteca setorial</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#tipoBiblioteca_2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#tipoBiblioteca_2">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#TipoDeBiblioteca"/>
+        <nome xml:lang="pt-br">Biblioteca Especializada</nome>
+        <rdfs:label xml:lang="pt-br">Biblioteca especializada</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#tituloComplementar_1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#tituloComplementar_1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#TituloComplementar"/>
+        <isTitleComplementOf rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#Obra_1"/>
+        <nome xml:lang="pt-br">Ciên. Inf.</nome>
+        <rdfs:comment xml:lang="pt-br">Título abreviado de: Ciência da Informação</rdfs:comment>
+        <rdfs:label xml:lang="pt-br">Ciênc._Inf.</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -4098,57 +4002,13 @@ Qualquer tipo de informação abstrata que não é registrada pelo uso de atribu
     
 
 
-    <!-- http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#70070-912 -->
+    <!-- https://revista.ibict.br/Homepage_1 -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#70070-912">
-        <rdf:type rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#Endereco"/>
-        <cep xml:lang="pt-br"></cep>
-        <rdfs:comment xml:lang="pt-br">CEP da localização da Biblioteca do Ibict</rdfs:comment>
-        <rdfs:label xml:lang="pt-br">70070-912</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#EMBRAPA/CPAF-AC/BT -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#EMBRAPA/CPAF-AC/BT">
-        <rdf:type rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#Colecao"/>
-        <contains rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#Ciência_da_Informação"/>
-        <isCollectionOf rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#Lydia_De_Queiroz_Sambaquy"/>
-        <conteudoColecao xml:lang="pt-br"></conteudoColecao>
-        <rdfs:comment xml:lang="pt-br">(AC) 1973 2 (1); 1974 3 (2); 1977–79 6-8; 1981–85.</rdfs:comment>
-        <rdfs:label xml:lang="pt-br">EMBRAPA/CPAF-AC/BT</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#Library_&amp;_information -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#Library_&amp;_information">
-        <rdf:type rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#Referenciador"/>
-        <rdfs:comment xml:lang="pt-br">Indexador de uma publicação seriada</rdfs:comment>
-        <rdfs:label xml:lang="pt-br">Library &amp; information science abstracts</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#biblioteca@ibict.br -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#biblioteca@ibict.br">
-        <rdf:type rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#Contato"/>
-        <email xml:lang="pt-br"></email>
-        <rdfs:comment xml:lang="pt-br">e-mail da Biblioteca do IBICT</rdfs:comment>
-        <rdfs:label xml:lang="pt-br">biblioteca@ibict.br</rdfs:label>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- https://revista.ibict.br/ciinf -->
-
-    <owl:NamedIndividual rdf:about="https://revista.ibict.br/ciinf">
+    <owl:NamedIndividual rdf:about="https://revista.ibict.br/Homepage_1">
         <rdf:type rdf:resource="http://www.semanticweb.org/kely/ontologies/2023/11/pinakes#HomePage"/>
+        <enderecoEletronico rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://revista.ibict.br/ciinf/article/view/6125.</enderecoEletronico>
         <rdfs:comment xml:lang="pt-br">HomePage da Revista Ciência da Informação.</rdfs:comment>
-        <rdfs:label xml:lang="pt-br">https://revista.ibict.br/ciinf</rdfs:label>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://revista.ibict.br/ciinf/article/view/6125.</rdfs:label>
     </owl:NamedIndividual>
     <rdf:Description>
         <alfabetacao xml:lang="pt-br"></alfabetacao>
