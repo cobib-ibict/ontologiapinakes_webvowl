@@ -11,8 +11,8 @@
     <owl:Ontology rdf:about="http://pinakes.prd.ibict.br/ontology/pinakes">
         <dc:rights rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://creativecommons.org/licenses/by/4.0/</dc:rights>
         <rdfs:comment>Esta Ontologia foi desenvolvida com base nos modelos LRM e PRESSoo, para a representação do domínio de serviços bibliográficos.</rdfs:comment>
-        <rdfs:isDefinedBy>modelo de dados que representa um conjunto de conceitos e os relacionamentos que abrangem os serviços bibliográficos integrados ao projeto Pinakes</rdfs:isDefinedBy>
-        <rdfs:label xml:lang="pt-br">Pinakes Ontologia</rdfs:label>
+        <rdfs:isDefinedBy>Modelo de dados que representa um conjunto de conceitos e os relacionamentos que abrangem os serviços bibliográficos integrados ao projeto Pinakes.</rdfs:isDefinedBy>
+        <rdfs:label xml:lang="pt-br">Ontologia Pinakes</rdfs:label>
     </owl:Ontology>
     
 
@@ -1727,7 +1727,7 @@ Cada algarismo do CEP possui um significado. Da esquerda para a direita, os núm
     <owl:DatatypeProperty rdf:about="http://pinakes.prd.ibict.br/ontology/pinakes#descricao">
         <rdfs:domain rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes#ISSN"/>
         <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-        <rdfs:comment xml:lang="pt-br">Número Internacional Normalizado para Publicações Seriadas ou Número Internacional Normalizado das Publicações em Série, é um Número serial de oito dígitos, usado para identificação única de uma publicação em série, aceito internacionalmente. O ISSN é especialmente útil na distinção entre séries com o mesmo título e são utilizados na ordenação, catalogação, empréstimo entre bibliotecas e outras práticas em conexão com a literatura de série.</rdfs:comment>
+        <rdfs:comment xml:lang="pt-br">Número Internacional Normalizado para Publicações Seriadas ou Número Internacional Normalizado das Publicações em Série, é um número serial de oito dígitos, usado para identificação única de uma publicação em série, aceito internacionalmente. O ISSN é especialmente útil na distinção entre séries com o mesmo título e são utilizados na ordenação, catalogação, empréstimo entre bibliotecas e outras práticas em conexão com a literatura de série.</rdfs:comment>
         <rdfs:isDefinedBy xml:lang="pt-br">Propriedade de dado que representa o International Standard Serial Number (ISSN), um código único atribuído a publicações seriadas como revistas e jornais, facilitando sua identificação e catalogação.</rdfs:isDefinedBy>
         <rdfs:label xml:lang="pt-br">descrição do ISSN</rdfs:label>
     </owl:DatatypeProperty>
@@ -2346,7 +2346,7 @@ http://linkedgeodata.org/ontology/Coordinates (para representar coordenadas geog
     <!-- http://pinakes.prd.ibict.br/ontology/pinakes#Expressao -->
 
     <owl:Class rdf:about="http://pinakes.prd.ibict.br/ontology/pinakes#Expressao">
-        <rdfs:subClassOf rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes#Colecao"/>
+        <rdfs:subClassOf rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes#Res"/>
         <rdfs:comment xml:lang="pt-br">Uma expressão é uma combinação específica de sinais de qualquer forma ou natureza (incluindo sinais visuais, auditivos ou gestuais) destinada a transmitir conteúdo intelectual ou artístico e identificável como tal. O termo “sinal” é entendido aqui tal qual o significado utilizado na semiótica. Uma expressão é uma entidade abstrata distinta dos suportes utilizados para gravá-la. Essa entidade corresponde á entidade Expressão do modelo  LRM.
  
 Uma expressão é a forma intelectual ou artística específica que uma obra adquire cada vez que é “realizada”. A expressão abrange, por exemplo, as palavras específicas, as sentenças, os parágrafos etc., que resultam da realização de uma obra na forma de um texto, ou sons particulares, fraseados etc., resultantes da realização de uma obra musical. Os limites da entidade expressão são definidos, entretanto, para excluir aspectos incidentais do formato físico, tais como o tipo de letra e layout da página para um texto, a não ser que, devido à natureza da obra, eles sejam parte integrante da realização intelectual ou artística da obra como tal. 
@@ -2384,6 +2384,20 @@ Da mesma forma, mudanças nas convenções ou instrumentos intelectuais empregad
 
     <owl:Class rdf:about="http://pinakes.prd.ibict.br/ontology/pinakes#ISSN">
         <rdfs:subClassOf rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes#Nomen"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes#hasSupport"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes#MeioFisico"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes#isISSNOf"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes#PublicacaoSeriada"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <rdfs:comment xml:lang="pt-br">O ISSN (International Standard Serial Number) é um código internacional que identifica de maneira única e definitiva títulos de publicações seriadas existentes no mundo todo. Composto por oito dígitos distribuídos em dois grupos de quatro, separados por um hífen. O último dígito é um dígito de controle que pode ser um “X”, e é calculado de acordo com um algoritmo matemático.
 O ISSN é usado em muitos sistemas de catalogação, assinaturas, intercâmbio internacional, entre outros e oferece um sistema eficiente e conveniente para a identificação de tais publicações.
 
@@ -2980,8 +2994,8 @@ Qualquer tipo de informação abstrata que não é registrada pelo uso de atribu
     <owl:NamedIndividual rdf:about="http://pinakes.prd.ibict.br/ontology/pinakes#AssuntoControlado_2">
         <rdf:type rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes#AssuntoControlado"/>
         <nome xml:lang="pt-br">Recursos de informação</nome>
-        <rdfs:comment xml:lang="pt-br">Um dos cabeçalho específico</rdfs:comment>
-        <rdfs:label rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">Recursos de informação</rdfs:label>
+        <rdfs:comment xml:lang="pt-br">Um cabeçalho específico.</rdfs:comment>
+        <rdfs:label xml:lang="pt-br">Recursos de informação</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -3051,7 +3065,7 @@ Qualquer tipo de informação abstrata que não é registrada pelo uso de atribu
         <isCountryPublicationOf rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes#Obra_1"/>
         <codigoIso xml:lang="pt-br">BR</codigoIso>
         <nome xml:lang="pt-br">Brasil</nome>
-        <rdfs:comment xml:lang="pt-br">Republica Federativa do Brasil</rdfs:comment>
+        <rdfs:comment xml:lang="pt-br">República Federativa do Brasil</rdfs:comment>
         <rdfs:label xml:lang="pt-br">Brasil (BR)</rdfs:label>
     </owl:NamedIndividual>
     
@@ -3066,7 +3080,7 @@ Qualquer tipo de informação abstrata que não é registrada pelo uso de atribu
         <isLocalityOf rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes#endereco_1"/>
         <isPlacePublicationOf rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes#1972"/>
         <nome xml:lang="pt-br">Brasília</nome>
-        <rdfs:comment xml:lang="pt-br">Cidade pertencente ao Distrtrito Federal, onde localiza-se a Biblioteca Lydia de Queiroz Sambaquy</rdfs:comment>
+        <rdfs:comment xml:lang="pt-br">Cidade pertencente ao Distrtrito Federal, onde localiza-se a Biblioteca Lydia de Queiroz Sambaquy.</rdfs:comment>
         <rdfs:label xml:lang="pt-br">Brasília</rdfs:label>
     </owl:NamedIndividual>
     
@@ -3202,7 +3216,7 @@ Qualquer tipo de informação abstrata que não é registrada pelo uso de atribu
         <hasSupport rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes#meioFisico_1"/>
         <isISSNOf rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes#Obra_1"/>
         <descricao xml:lang="pt-br">0100-1965</descricao>
-        <rdfs:comment xml:lang="pt-br">IISSN impresso da publicação seriada: Ciência da Informação</rdfs:comment>
+        <rdfs:comment xml:lang="pt-br">ISSN impresso da publicação seriada: Ciência da Informação.</rdfs:comment>
         <rdfs:label xml:lang="pt-br">0100-1965.</rdfs:label>
     </owl:NamedIndividual>
     
@@ -3400,7 +3414,7 @@ Qualquer tipo de informação abstrata que não é registrada pelo uso de atribu
         <tipoDeRegistro xml:lang="pt-br">Material textual</tipoDeRegistro>
         <tituloProprio xml:lang="pt-br">Ciência da Informação</tituloProprio>
         <volume rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</volume>
-        <rdfs:comment xml:lang="pt-br">publicação seriada quadrimestral.</rdfs:comment>
+        <rdfs:comment xml:lang="pt-br">Publicação seriada quadrimestral.</rdfs:comment>
         <rdfs:label xml:lang="pt-br">Ciência da Informação</rdfs:label>
     </owl:NamedIndividual>
     
@@ -3610,7 +3624,7 @@ Qualquer tipo de informação abstrata que não é registrada pelo uso de atribu
     <owl:NamedIndividual rdf:about="http://pinakes.prd.ibict.br/ontology/pinakes#SaoPaulo">
         <rdf:type rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes#UnidadeFederativa"/>
         <owl:differentFrom rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes#Sao_Paulo"/>
-        <rdfs:comment xml:lang="pt-br">Unidade federativa do Brasil representada pela sigla SP</rdfs:comment>
+        <rdfs:comment xml:lang="pt-br">Unidade federativa do Brasil representada pela sigla SP.</rdfs:comment>
         <rdfs:label xml:lang="pt-br">São Paulo</rdfs:label>
     </owl:NamedIndividual>
     
@@ -3620,7 +3634,7 @@ Qualquer tipo de informação abstrata que não é registrada pelo uso de atribu
 
     <owl:NamedIndividual rdf:about="http://pinakes.prd.ibict.br/ontology/pinakes#Sao_Paulo">
         <rdf:type rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes#Localidade"/>
-        <rdfs:comment xml:lang="pt-br">Cidade do Estado de Sção Paulo.</rdfs:comment>
+        <rdfs:comment xml:lang="pt-br">Cidade do Estado de São Paulo.</rdfs:comment>
         <rdfs:label xml:lang="pt-br">São Paulo</rdfs:label>
     </owl:NamedIndividual>
     
@@ -3670,8 +3684,8 @@ Qualquer tipo de informação abstrata que não é registrada pelo uso de atribu
         <rdf:type rdf:resource="http://pinakes.prd.ibict.br/ontology/pinakes#Unidade"/>
         <nome xml:lang="pt-br">Coordenação de Serviços Bibliográficos</nome>
         <sigla xml:lang="pt-br">COBIB</sigla>
-        <rdfs:comment>Unidade do IBICT que administra a biblioteca</rdfs:comment>
-        <rdfs:label>Coordenação de Serviços Bibliográficos (COBIB)</rdfs:label>
+        <rdfs:comment>Unidade do IBICT que administra a biblioteca.</rdfs:comment>
+        <rdfs:label>Coordenação de Serviços Bibliográficos</rdfs:label>
     </owl:NamedIndividual>
     
 
